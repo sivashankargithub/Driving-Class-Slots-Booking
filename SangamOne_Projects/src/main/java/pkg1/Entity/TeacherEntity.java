@@ -13,6 +13,7 @@ public class TeacherEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int teach_id;
+	
 	String teach_name;
 	@Column(nullable=false,unique=true)
 	long teach_contact;
@@ -20,12 +21,6 @@ public class TeacherEntity {
 	int teach_pincode;
 	String teach_country;
 	String slots;
-	public String getTeach_gender() {
-		return teach_gender;
-	}
-	public void setTeach_gender(String teach_gender) {
-		this.teach_gender = teach_gender;
-	}
 	public int getTeach_id() {
 		return teach_id;
 	}
@@ -43,6 +38,12 @@ public class TeacherEntity {
 	}
 	public void setTeach_contact(long teach_contact) {
 		this.teach_contact = teach_contact;
+	}
+	public String getTeach_gender() {
+		return teach_gender;
+	}
+	public void setTeach_gender(String teach_gender) {
+		this.teach_gender = teach_gender;
 	}
 	public int getTeach_pincode() {
 		return teach_pincode;
@@ -62,10 +63,9 @@ public class TeacherEntity {
 	public void setSlots(String slots) {
 		this.slots = slots;
 	}
-	public TeacherEntity(int teach_id, String teach_name, long teach_contact, String teach_gender, int teach_pincode, String teach_country,
-			String slots) {
+	public TeacherEntity(String teach_name, long teach_contact, String teach_gender, int teach_pincode,
+			String teach_country, String slots) {
 		super();
-		this.teach_id = teach_id;
 		this.teach_name = teach_name;
 		this.teach_contact = teach_contact;
 		this.teach_gender = teach_gender;
